@@ -1,0 +1,74 @@
+
+QL> desc accountrequest;
+Name                                      Null?    Type
+----------------------------------------- -------- --------------
+REQUESTID                                 NOT NULL NUMBER(10)
+BRANCH                                             VARCHAR2(15)
+ACCOUNTTYPE                                        VARCHAR2(15)
+TITLE                                              VARCHAR2(4)
+FIRSTNAME                                          VARCHAR2(15)
+LASTNAME                                           VARCHAR2(15)
+DOB                                                DATE
+WORKPHONE                                          NUMBER(10)
+HOMEPHONE                                          NUMBER(10)
+ADDRESS                                            VARCHAR2(30)
+STATE                                              VARCHAR2(15)
+ZIP                                                NUMBER(10)
+EMAIL                                              VARCHAR2(30)
+STATUS                                             VARCHAR2(10)
+-----------------------------------------------------------------
+  1  CREATE SEQUENCE transaction_id_seq
+  2  START WITH 2000
+  3  INCREMENT BY 10
+  4* MINVALUE 10
+---------------------------------------------------------------
+
+SQL> desc registerdinfo;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ------------------
+ REQUESTID                                 NOT NULL NUMBER(10)
+ ACCOUNT_NUMBER                                     NUMBER(6)
+ BRANCH                                             VARCHAR2(15)
+ ACCOUNTTYPE                                        VARCHAR2(15)
+ TITLE                                              VARCHAR2(4)
+ FIRSTNAME                                          VARCHAR2(15)
+ LASTNAME                                           VARCHAR2(15)
+ DOB                                                DATE
+ WORKPHONE                                          NUMBER(10)
+ HOMEPHONE                                          NUMBER(10)
+ ADDRESS                                            VARCHAR2(30)
+ STATE                                              VARCHAR2(15)
+ ZIP                                                NUMBER(10)
+ EMAIL                                              VARCHAR2(30)
+ ONLINEREGISTRATION                                 VARCHAR2(1)
+ PASSWORD                                           VARCHAR2(10)
+---------------------------------------------------------------------
+
+SQL> desc transactioninfo;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ TRANSACTIONID                                      NUMBER(10)
+ TRANSACTIONDATE                                    DATE
+ AMOUNT                                             NUMBER(8)
+ CHEQUENO                                           NUMBER(10)
+ TRANSACTIONTYPE                                    VARCHAR2(2)
+ ACCOUNT_NUMBER                                     NUMBER(6)
+-------------------------------------------------
+SQL> CREATE TABLE Manager (
+  2   manager_username number(8),
+  3   manager_password varchar2(10));
+
+Table created.
+
+SQL> CREATE SEQUENCE requestid_seq
+  2  START WITH 1000
+  3  INCREMENT BY 10
+  4  MINVALUE 10;
+
+Sequence created.
+
+SQL> CREATE SEQUENCE c_s_t
+  2  START WITH 10
+  3  INCREMENT BY 2
+  4  MINVALUE 10;
+--------------------
